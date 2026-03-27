@@ -21,13 +21,12 @@ class ViewController: UIViewController {
     
     let linkedinButton = UIButton()//direct linkedin open
     let githubButton = UIButton()//direct github open
-    let linkedinQRButton = UIButton()//modal view with a qr for linkedin
-    let githubQRButton = UIButton()//modal view with a qr for github
     
     let editButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
         setupPhotos()
         
         setupLabels()
@@ -37,114 +36,94 @@ class ViewController: UIViewController {
         setupStack()
         
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        nameLabel.text = UserDefaults.standard.string(forKey: "userName")
+        desciptionLabel.text = UserDefaults.standard.string(forKey: "userDesignation")
+        companyLabel.text = UserDefaults.standard.string(forKey: "userCompany")
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        photo.layer.cornerRadius = (photo.frame.width)/2
+    }
 
     func setupPhotos(){
         bannerPhoto.image = UIImage(named: "GaganBanner")
-        bannerPhoto.contentMode = .scaleAspectFit
+        bannerPhoto.contentMode = .scaleAspectFill
         bannerPhoto.clipsToBounds = true
         bannerPhoto.translatesAutoresizingMaskIntoConstraints = false
         
         photo.image = UIImage(named: "Gagan")
         photo.contentMode = .scaleAspectFill
-        photo.layer.borderWidth = 3
+        photo.layer.borderWidth = 5
         photo.layer.borderColor = UIColor.systemBlue.cgColor
         photo.clipsToBounds = true
         photo.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func setupLabels(){
-        companyLabel.text = "Animer"
-        companyLabel.textColor = .white
+        companyLabel.text = "XYZ pvt. ltd."
+        companyLabel.textColor = .systemBlue
         companyLabel.textAlignment = .center
         companyLabel.font = UIFont.systemFont(ofSize: 40, weight: .bold)
         companyLabel.numberOfLines = 1
         companyLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        nameLabel.text = "Gagan"
-        nameLabel.textColor = .white
+        nameLabel.text = "Gagan Verma"
+        nameLabel.textColor = .systemBlue
         nameLabel.textAlignment = .center
         nameLabel.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         nameLabel.numberOfLines = 0
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        desciptionLabel.text = "iOS learning student in final year of B.tech CSE"
-        desciptionLabel.textColor = .white
+        desciptionLabel.text = "iOS learning student final year of B.tech CSE"
+        desciptionLabel.textColor = .systemBlue
         desciptionLabel.textAlignment = .center
         desciptionLabel.font = UIFont.systemFont(ofSize: 20)
         desciptionLabel.numberOfLines = 0
         desciptionLabel.translatesAutoresizingMaskIntoConstraints = false
     }
-    
+    func buttonConfig(_ button: UIButton,_ symbol: String){
+        var config = UIButton.Configuration.filled()
+        config.image = UIImage(systemName: symbol)
+        config.imagePlacement = .leading
+        config.imagePadding = 8
+        config.baseBackgroundColor = .systemBlue
+        config.baseForegroundColor = .white
+        button.configuration = config
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.systemGray.cgColor
+        button.layer.cornerRadius = 22
+        
+    }
     func setupButtons(){
         phoneButton.setTitle("Phone", for: .normal)
-        phoneButton.setTitleColor(.lightGray, for: .normal)
-        phoneButton.backgroundColor = .systemBlue
-        phoneButton.layer.cornerRadius = 22
-        phoneButton.layer.borderWidth = 2
-        phoneButton.layer.borderColor = UIColor.systemGray.cgColor
-        phoneButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        phoneButton.addTarget(self, action: #selector(DetailTapped), for: .touchUpInside)
+        buttonConfig(phoneButton, "phone.fill")
+        phoneButton.addTarget(self, action: #selector(phoneTapped), for: .touchUpInside)
         phoneButton.translatesAutoresizingMaskIntoConstraints = false
         
         emailButton.setTitle("Email", for: .normal)
-        emailButton.setTitleColor(.lightGray, for: .normal)
-        emailButton.backgroundColor = .systemBlue
-        emailButton.layer.cornerRadius = 22
-        emailButton.layer.borderWidth = 2
-        emailButton.layer.borderColor = UIColor.systemGray.cgColor
-        emailButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        emailButton.addTarget(self, action: #selector(DetailTapped), for: .touchUpInside)
+        buttonConfig(emailButton, "mail.stack")
+        emailButton.addTarget(self, action: #selector(emailTapped), for: .touchUpInside)
         emailButton.translatesAutoresizingMaskIntoConstraints = false
         
         linkedinButton.setTitle("LinkedIn", for: .normal)
-        linkedinButton.setTitleColor(.lightGray, for: .normal)
-        linkedinButton.backgroundColor = .systemBlue
-        linkedinButton.layer.cornerRadius = 12
-        linkedinButton.layer.borderWidth = 2
-        linkedinButton.layer.borderColor = UIColor.systemGray.cgColor
-        linkedinButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        linkedinButton.addTarget(self, action: #selector(DetailTapped), for: .touchUpInside)
+        buttonConfig(linkedinButton, "link")
+        linkedinButton.addTarget(self, action: #selector(linkedinTapped), for: .touchUpInside)
         linkedinButton.translatesAutoresizingMaskIntoConstraints = false
         
         githubButton.setTitle("Github", for: .normal)
-        githubButton.setTitleColor(.lightGray, for: .normal)
-        githubButton.backgroundColor = .systemBlue
-        githubButton.layer.cornerRadius = 12
-        githubButton.layer.borderWidth = 2
-        githubButton.layer.borderColor = UIColor.systemGray.cgColor
-        githubButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        githubButton.addTarget(self, action: #selector(DetailTapped), for: .touchUpInside)
+        buttonConfig(githubButton, "chevron.left.forwardslash.chevron.right")
+        githubButton.addTarget(self, action: #selector(githubTapped), for: .touchUpInside)
         githubButton.translatesAutoresizingMaskIntoConstraints = false
         
-        linkedinQRButton.setTitle("LinkedInQR", for: .normal)
-        linkedinQRButton.setTitleColor(.lightGray, for: .normal)
-        linkedinQRButton.backgroundColor = .systemBlue
-        linkedinQRButton.layer.cornerRadius = 12
-        linkedinQRButton.layer.borderWidth = 2
-        linkedinQRButton.layer.borderColor = UIColor.systemGray.cgColor
-        linkedinQRButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        linkedinQRButton.addTarget(self, action: #selector(DetailTapped), for: .touchUpInside)
-        linkedinQRButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        githubQRButton.setTitle("GithubQR", for: .normal)
-        githubQRButton.setTitleColor(.lightGray, for: .normal)
-        githubQRButton.backgroundColor = .systemBlue
-        githubQRButton.layer.cornerRadius = 12
-        githubQRButton.layer.borderWidth = 2
-        githubQRButton.layer.borderColor = UIColor.systemGray.cgColor
-        githubQRButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        githubQRButton.addTarget(self, action: #selector(DetailTapped), for: .touchUpInside)
-        githubQRButton.translatesAutoresizingMaskIntoConstraints = false
-        
         editButton.setTitle("Edit", for: .normal)
-        editButton.setTitleColor(.lightGray, for: .normal)
-        editButton.backgroundColor = .systemBlue
-        editButton.layer.cornerRadius = 12
-        editButton.layer.borderWidth = 2
-        editButton.layer.borderColor = UIColor.systemGray.cgColor
-        editButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        editButton.addTarget(self, action: #selector(DetailTapped), for: .touchUpInside)
+        buttonConfig(editButton, "slider.horizontal.3")
+        editButton.addTarget(self, action: #selector(editTapped), for: .touchUpInside)
         editButton.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -161,8 +140,6 @@ class ViewController: UIViewController {
         let hstack2 = UIStackView(arrangedSubviews: [
             linkedinButton,
             githubButton,
-            linkedinQRButton,
-            githubQRButton
         ])
         hstack2.axis = .horizontal
         hstack2.spacing = 20
@@ -188,9 +165,9 @@ class ViewController: UIViewController {
             editButton
         ])
         Vstack.axis = .vertical
-        Vstack.spacing = 10
+        Vstack.spacing = 15
         Vstack.distribution = .equalSpacing
-        Vstack.alignment = .fill
+        Vstack.alignment = .center
         
         Vstack.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(Vstack)
@@ -199,14 +176,52 @@ class ViewController: UIViewController {
             Vstack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             Vstack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             Vstack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            Vstack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
+            Vstack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+            bannerPhoto.heightAnchor.constraint(equalToConstant: 180),
+               bannerPhoto.widthAnchor.constraint(equalTo: Vstack.widthAnchor),
+               photo.widthAnchor.constraint(equalToConstant: 120),
+               photo.heightAnchor.constraint(equalToConstant: 120),
+            
+            phoneButton.heightAnchor.constraint(equalToConstant: 44),
+            emailButton.heightAnchor.constraint(equalToConstant: 44),
+            linkedinButton.heightAnchor.constraint(equalToConstant: 44),
+            githubButton.heightAnchor.constraint(equalToConstant: 44),
+            editButton.widthAnchor.constraint(equalToConstant: 94),
+            
+            hstack1.widthAnchor.constraint(equalTo: Vstack.widthAnchor),
+            hstack2.widthAnchor.constraint(equalTo: Vstack.widthAnchor)
         ])
     }
 
     
-    @objc func DetailTapped(){
-        let vc = DetailViewController()
+    @objc func editTapped(){
+        let vc = EditViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc func phoneTapped(){
+        let vc = PhoneViewController()
+        vc.modalPresentationStyle = .pageSheet
+        present(vc, animated: true)
+        
+    }
+    
+    @objc func emailTapped(){
+        let vc = EmailViewController()
+        vc.modalPresentationStyle = .pageSheet
+        present(vc, animated: true)
+    }
+    
+    @objc func linkedinTapped(){
+        guard let url = URL(string: "https://www.linkedin.com/in/vermagagan") else{return}
+        UIApplication.shared.open(url)
+    }
+    
+    @objc func githubTapped(){
+        guard let url = URL(string: "https://github.com/vermagagan") else {return}
+        UIApplication.shared.open(url)
+    }
+    
 }
 
