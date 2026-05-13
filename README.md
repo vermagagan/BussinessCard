@@ -10,7 +10,7 @@ A fully programmatic iOS app to digitize your professional identity. View, inter
  
 | Card Screen | Edit Screen | Phone Modal |
 |---|---|---|
-| ![Card](dummyApp2/Screenshots/card.png) | ![Edit](Screenshots/edit.png) | ![Phone](Screenshots/phone.png) |
+| ![Card](dummyApp2/Screenshots/card.png) | ![Edit](dummyApp2/Screenshots/edit.png) | ![Phone](dummyApp2/Screenshots/phone.png) |
  
 ---
  
