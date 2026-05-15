@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		61CF9A2E2F7417A400315E20 /* dummyApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dummyApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		61CF9A2E2F7417A400315E20 /* Business Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Business Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		61CF9A402F7417A600315E20 /* Exceptions for "dummyApp2" folder in "dummyApp2" target */ = {
+		61CF9A402F7417A600315E20 /* Exceptions for "Business Card" folder in "Business Card" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 61CF9A2D2F7417A400315E20 /* dummyApp2 */;
+			target = 61CF9A2D2F7417A400315E20 /* Business Card */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		61CF9A302F7417A400315E20 /* dummyApp2 */ = {
+		61CF9A302F7417A400315E20 /* Business Card */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				61CF9A402F7417A600315E20 /* Exceptions for "dummyApp2" folder in "dummyApp2" target */,
+				61CF9A402F7417A600315E20 /* Exceptions for "Business Card" folder in "Business Card" target */,
 			);
-			path = dummyApp2;
+			path = "Business Card";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -45,7 +45,7 @@
 		61CF9A252F7417A400315E20 = {
 			isa = PBXGroup;
 			children = (
-				61CF9A302F7417A400315E20 /* dummyApp2 */,
+				61CF9A302F7417A400315E20 /* Business Card */,
 				61CF9A2F2F7417A400315E20 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,7 +53,7 @@
 		61CF9A2F2F7417A400315E20 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				61CF9A2E2F7417A400315E20 /* dummyApp2.app */,
+				61CF9A2E2F7417A400315E20 /* Business Card.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,9 +61,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		61CF9A2D2F7417A400315E20 /* dummyApp2 */ = {
+		61CF9A2D2F7417A400315E20 /* Business Card */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 61CF9A412F7417A600315E20 /* Build configuration list for PBXNativeTarget "dummyApp2" */;
+			buildConfigurationList = 61CF9A412F7417A600315E20 /* Build configuration list for PBXNativeTarget "Business Card" */;
 			buildPhases = (
 				61CF9A2A2F7417A400315E20 /* Sources */,
 				61CF9A2B2F7417A400315E20 /* Frameworks */,
@@ -74,13 +74,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				61CF9A302F7417A400315E20 /* dummyApp2 */,
+				61CF9A302F7417A400315E20 /* Business Card */,
 			);
-			name = dummyApp2;
+			name = "Business Card";
 			packageProductDependencies = (
 			);
 			productName = dummyApp2;
-			productReference = 61CF9A2E2F7417A400315E20 /* dummyApp2.app */;
+			productReference = 61CF9A2E2F7417A400315E20 /* Business Card.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -98,7 +98,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 61CF9A292F7417A400315E20 /* Build configuration list for PBXProject "dummyApp2" */;
+			buildConfigurationList = 61CF9A292F7417A400315E20 /* Build configuration list for PBXProject "Business Card" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				61CF9A2D2F7417A400315E20 /* dummyApp2 */,
+				61CF9A2D2F7417A400315E20 /* Business Card */,
 			);
 		};
 /* End PBXProject section */
@@ -146,7 +146,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = dummyApp2/Info.plist;
+				INFOPLIST_FILE = "Business Card/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Business Card";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -157,7 +158,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gagan.dummyApp2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gagan.Business-Card";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -177,7 +178,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = dummyApp2/Info.plist;
+				INFOPLIST_FILE = "Business Card/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Business Card";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -188,7 +190,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gagan.dummyApp2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gagan.Business-Card";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -322,7 +324,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		61CF9A292F7417A400315E20 /* Build configuration list for PBXProject "dummyApp2" */ = {
+		61CF9A292F7417A400315E20 /* Build configuration list for PBXProject "Business Card" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				61CF9A442F7417A600315E20 /* Debug */,
@@ -331,7 +333,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		61CF9A412F7417A600315E20 /* Build configuration list for PBXNativeTarget "dummyApp2" */ = {
+		61CF9A412F7417A600315E20 /* Build configuration list for PBXNativeTarget "Business Card" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				61CF9A422F7417A600315E20 /* Debug */,
